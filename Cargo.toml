@@ -1,0 +1,22 @@
+[package]
+name = "trend-following"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Minimal core of systematic trend following: causal EWMA filters, closed-form normalisation, volatility-targeted positions"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/hinanohart/trend-following"
+keywords = ["trend-following", "momentum", "ewma", "time-series", "finance"]
+categories = ["finance", "mathematics"]
+include = ["rust/src/**", "rust/tests/**", "testdata/*.csv", "/README.md", "/EVIDENCE.md", "/LICENSE", "/LICENSE-APACHE"]
+
+[lib]
+path = "rust/src/lib.rs"
+
+[[test]]
+name = "golden"
+path = "rust/tests/golden.rs"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
